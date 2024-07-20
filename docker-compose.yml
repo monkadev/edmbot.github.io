@@ -1,17 +1,16 @@
 ---
+version: "2.1"
 services:
-  webtop:
-    image: lscr.io/linuxserver/webtop:latest
-    container_name: webtop
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Etc/UTC
-    volumes:
-      - /kaggle/working/webtop/config:/config
-    ports:
-      - 3000:3000
-      - 3001:3001
-    restart: unless-stopped
-   privileged: true
-      
+   webtop:
+      image: ghcr.io/linuxserver/webtop:alpine-mate
+      container_name: webtop
+      environment:
+         - PUID=1000
+         - PGID=1000
+         - TZ=Asia/India
+      volumes:
+         - /kaggle/working/webtop/config:/config
+      ports:
+         - 3000:3000
+      shm_size: "1gb"
+      restart: unless-stopped
