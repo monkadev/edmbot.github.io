@@ -9,7 +9,7 @@ services:
          - PGID=1000
          - TZ=Asia/India
       volumes:
-         - your-folder-path-to/webtop/config:/config
+         - /kaggle/working/webtop/config:/config
       ports:
          - 3000:3000
       shm_size: "1gb"
